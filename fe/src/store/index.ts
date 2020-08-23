@@ -1,22 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Cookies from 'js-cookie'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: window.sessionStorage.getItem('token'),
-    account: window.sessionStorage.getItem('account')
+    token: Cookies.get('token')
   },
   mutations: {
-    LOGIN: (state, data) => {
-      state.token = data
-      window.sessionStorage.setItem('token', data)
+    LOGIN: (state, token) => {
+      state.token = token
+      Cookies.set('token', token)
     },
     LOGOUT: (state) => {
       state.token = null
       state.account = null
-      window.sessionStorage.removeItem('token')
+      Cookies.remove('token')
       window.sessionStorage.removeItem('account')
     },
     ACCOUNT: (state, data) => {

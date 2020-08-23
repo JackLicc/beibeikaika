@@ -31,10 +31,7 @@ ajaxClient.interceptors.response.use(
     if (error.response) {
       switch (error.response.status) {
         case 401:
-          // router.replace({
-          //   path: '/login'
-          //   //  query: { redirect: router.currentRoute.fullPath }
-          // })
+          location.href = '/login'
       }
     }
     return Promise.reject(error.response)

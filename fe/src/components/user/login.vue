@@ -56,7 +56,7 @@ export default class Login extends Vue {
     .then(response => {
       const data = response.data
       if (data.code === 0) {
-        store.
+        store.dispatch('UserLogin', data.data.access_token)
         Vant.Toast('login successfully')
         location.href = '/home'
       } else {

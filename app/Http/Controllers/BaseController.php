@@ -6,7 +6,7 @@ use App\Helpers\ErrorCode;
 
 class BaseController extends Controller
 {
-    public function success(array $data) {
+    public function success(array $data = null) {
         $response = ErrorCode::SUCCESS;
         return json_encode(['code' => $response[0], 'message' => $response[1], 'data' => $data]);
     }

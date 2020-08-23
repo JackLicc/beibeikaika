@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 class AuthController extends BaseController
 {
@@ -79,6 +80,7 @@ class AuthController extends BaseController
      */
     public function logout(Request $request)
     {
+        Log::info('logout');
         $request->user()->token()->revoke();
         return response()->json([
             'message' => 'Successfully logged out'
