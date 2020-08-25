@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Helpers\ErrorCode;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 
 class AuthController extends BaseController
 {
+
     /**
      * Create user
      *
@@ -20,16 +22,24 @@ class AuthController extends BaseController
     public function register(Request $request)
     {
         $request->validate([
+            'name' => 'required|string',
             'email' => 'required|string|email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string|confirmed',
+            'verification_code' => 'required|string'
         ]);
         $user = User::where('email', $request->email)->first();
         if ($user) {
             return $this->error(ErrorCode::EMAIL_HAS_BEEN_TAKEN);
         }
+
+        if ((int) $request->verification_code !== session('register_verification_code')) {
+            return $this->error(ErrorCode::INVALID_VERIFICATION_CODE);
+        }
         $user = new User([
+            'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'referral_code' => $request->referralCode,
         ]);
         $user->save();
         return $this->success();
@@ -95,5 +105,18 @@ class AuthController extends BaseController
     public function user(Request $request)
     {
         return response()->json($request->user());
+    }
+
+    /**
+     * Get registration verification code
+     * @return false|string
+     */
+    public function getRVCode() {
+        $code = rand(1000, 9999);
+        session(['register_verification_code' => $code]);
+        if (App::environment('production')) {
+            return $this->success();
+        }
+        return $this->success(['code' => $code]);
     }
 }
