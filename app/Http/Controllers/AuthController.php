@@ -42,6 +42,7 @@ class AuthController extends BaseController
             'referral_code' => $request->referralCode,
         ]);
         $user->save();
+
         return $this->success();
     }
 

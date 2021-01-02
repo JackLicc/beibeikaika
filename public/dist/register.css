@@ -48,6 +48,10 @@ a {
 .main .main-content .register-form .agree-and-submit .van-checkbox {
   margin-bottom: 30px;
 }
+.main .main-content .register-form .agree-and-submit .login-link {
+  text-align: center;
+  margin-top: 10px;
+}
 .main .main-content .register-form .van-cell {
   border-bottom: 1px solid #5fc36b;
 }

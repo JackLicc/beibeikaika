@@ -61,10 +61,13 @@
           placeholder="Please confirm your password"
         />
         <div class="agree-and-submit">
-          <van-checkbox v-model="agreed" shape="square" checked-color="#5d823d">I have read and agreed to Terms & Conditions.</van-checkbox>
-          <van-button block round color="#5d823d" type="info" native-type="submit">
+          <van-checkbox v-model="agreed" shape="square" checked-color="#07c160">I have read and agreed to Terms & Conditions.</van-checkbox>
+          <van-button block round type="primary" native-type="submit">
             Sign up
           </van-button>
+          <div class="login-link">
+            <a href="/login">Already have an account? Login here</a>
+          </div>
         </div>
       </van-form>
     </div>
@@ -186,6 +189,10 @@ a {
         margin: 50px 50px 0 50px;
         .van-checkbox {
           margin-bottom: 30px;
+        }
+        .login-link {
+          text-align:center;
+          margin-top:10px;
         }
       }
       .van-cell {
