@@ -147,7 +147,7 @@ a {
     }
   }
   .promote-text {
-    color: @theme-color;
+    color: #3e6bab;
     font-size: 1.4rem;
     padding: 40px 0 20px 15px;
     font-weight: 500;
