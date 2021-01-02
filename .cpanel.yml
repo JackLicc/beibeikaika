@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/mywarbor/wanan.app/web/
+    - /bin/cp -R * $DEPLOYPATH
