@@ -29,7 +29,7 @@
           v-model="verificationCode"
           name="Verification code"
           label="Verification Code"
-          placeholder="Please input your Verification code"
+          placeholder="Please input conformation code"
         />
         <div class="get-otp-btn">
           <a v-if="count <= 0" href="javascript:void(0)" @click="getOTP">Send Code</a>
@@ -47,14 +47,14 @@
           v-model="referralCode"
           name="Referral Code"
           label="Referral Code"
-          placeholder="Optional, if you have one, please fill in"
+          placeholder="Required"
         />
-        <div class="agree-and-submit">
+        <div class="agree-and-submit" align="center">
           <van-checkbox v-model="agreed" shape="square" checked-color="#d68d33">I have read and agreed to Terms & Conditions.</van-checkbox>
-          <van-button block round type="primary" native-type="submit">
+          <van-button block round type="primary" native-type="submit" color="#d68d33">
             Sign up
           </van-button>
-          <div class="login-link">
+          <div class="login-link" align="center">
             <a href="/login">Already have an account? Login here</a>
           </div>
         </div>
