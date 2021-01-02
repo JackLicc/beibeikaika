@@ -28,7 +28,7 @@
         </div>
       </van-form>
       <van-form>
-        <div class="signup-hints">New to WAN Card? <a href="/register">Sign up for free</a></div>
+        <div class="signup-hints">New to WAN? <a href="/register">Sign up now</a></div>
       </van-form>
     </div>
   </div>
@@ -72,7 +72,6 @@ a {
   color: #1f85f1;
 }
 .main {
-  background-image: url('../../assets/img/homepage-bgr.png');
   background-size: cover;
   text-align: center;
   height: 100%;

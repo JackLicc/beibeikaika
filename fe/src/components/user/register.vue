@@ -8,7 +8,7 @@
       </van-steps>
     </div>
     <div class="promote-text">
-      Start with all in WAN Account
+      Start with WAN now
     </div>
     <div class="main-content">
       <van-form
@@ -16,18 +16,7 @@
         @submit="onSubmit"
         label-width="100%"
       >
-        <van-field
-          v-model="name"
-          name="Name"
-          label="Name"
-          placeholder="Please input your name"
-        />
-         <van-field
-          v-model="referralCode"
-          name="Referral Code"
-          label="Referral Code"
-          placeholder="Optional, if you have one, please fill in"
-        />
+
 
         <van-field
           v-model="email"
@@ -53,15 +42,15 @@
           label="Password"
           placeholder="Your password should be at least 8 alphanumeric digits"
         />
-        <van-field
-          v-model="passwordRepeat"
-          type="password"
-          name="Password"
-          label="Confirm Password"
-          placeholder="Please confirm your password"
+
+         <van-field
+          v-model="referralCode"
+          name="Referral Code"
+          label="Referral Code"
+          placeholder="Optional, if you have one, please fill in"
         />
         <div class="agree-and-submit">
-          <van-checkbox v-model="agreed" shape="square" checked-color="#07c160">I have read and agreed to Terms & Conditions.</van-checkbox>
+          <van-checkbox v-model="agreed" shape="square" checked-color="#d68d33">I have read and agreed to Terms & Conditions.</van-checkbox>
           <van-button block round type="primary" native-type="submit">
             Sign up
           </van-button>
@@ -181,7 +170,7 @@ a {
           left: -155px;
           top: 100px;
           width: 100px;
-          color: #5d823d;
+          color: #3e6bab;
         }
       }
       .agree-and-submit {
