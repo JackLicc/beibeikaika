@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: Cookies.get('token')
+    token: Cookies.get('token'),
+    account: null
   },
   mutations: {
     LOGIN: (state, token) => {

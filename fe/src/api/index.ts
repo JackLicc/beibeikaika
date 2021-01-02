@@ -5,7 +5,7 @@ const baseConfig = {
   headers: {
     timeout: 5000,
     'Content-Type': 'application/json',
-    'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    'X-CSRF-TOKEN' : document?.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
   }
 }
 
